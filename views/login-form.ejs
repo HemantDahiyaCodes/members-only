@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-</head>
-<body>
+    <link rel="stylesheet" href="login-form-style.css" />
+
+    <!-- Fonts -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
+    </style>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Savate:ital,wght@0,200..900;1,200..900&display=swap");
+    </style>
+  </head>
+  <body>
     <h1>You can log in here!</h1>
     <form action="/log-in" method="post">
-        <label for="username">Enter your username: </label>
-        <input type="text" name="username" id="username" required>
+      <label for="username">Enter your username: </label>
+      <input type="text" name="username" id="username" required />
 
-        <label for="password">Enter your password: </label>
-        <input type="password" name="password" id="password" required>
+      <label for="password">Enter your password: </label>
+      <input type="password" name="password" id="password" required />
 
-        <button type="submit">Log in</button>
+      <button type="submit">Log in</button>
 
-        <div id="sign-up-section">
-            <p>Don't have an account</p>
-            <a href="/">Sign up</a>
-        </div>
+      <div id="sign-up-section">
+        <p>Don't have an account</p>
+        <a href="/">Sign up</a>
+      </div>
     </form>
-</body>
+  </body>
 </html>
