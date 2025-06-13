@@ -50,4 +50,6 @@ app.get("/log-out", (req, res, next) => {
   });
 });
 
-app.listen(8000);
+app.listen(8000, () => {
+  console.log("Server started!");
+});
