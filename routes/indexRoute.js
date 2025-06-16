@@ -1,10 +1,10 @@
 const express = require("express");
 const indexRoute = express();
-const signUpController = require("../controllers/signUpController");
+const contoller = require("../controllers/contoller");
 
 
-indexRoute.get("/", signUpController.SignUpForm)
+indexRoute.get("/", contoller.SignUpForm)
 
-indexRoute.post("/", signUpController.AddUser)
+indexRoute.post("/", contoller.AddUser);
 
 module.exports = indexRoute;

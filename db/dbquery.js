@@ -22,7 +22,12 @@ async function checkUser(username, password) {
   return await pool.query("SELECT * FROM userInformation WHERE username = $1 AND password = $2", [username, password]);
 }
 
+async function updateMemberStatus(username) {
+  return await pool.query("UPDATE userInformation SET ismember = true WHERE username = $1", [username])
+}
+
 module.exports = {
   AddUser,
   checkUser,
+  updateMemberStatus
 };

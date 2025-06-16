@@ -45,7 +45,6 @@ app.get("/log-out", (req, res, next) => {
     if (err) {
       return next(err);
     }
-
     res.redirect("/log-in");
   });
 });
