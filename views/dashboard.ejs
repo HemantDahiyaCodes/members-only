@@ -1,15 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
-</head>
-<body>
-    <H1>Hello user</H1>
-    be a member by clicking the button: <form action="/dashboard" method="post">
-        <input type="submit" value="submit" name="button">
+    <link rel="stylesheet" href="createMessagejs.css">
+  </head>
+  <body>
+    <H1>Hello <%= user.username %></H1>
+    be a member by clicking the button:
+    <form action="/dashboard" method="post">
+      <button type="submit">become a member</button>
     </form>
+
+    <!-- Create message form -->
+    <button id="create-message">create message</button>
+
+    <!-- Modal box -->
+    <div id="message-modal" class="messageModal">
+      <div class="message-modal-content">
+        <button id="close-form">close form</button>
+        <form action="/createMessage" method="post">
+          <!-- Title -->
+          <label for="title">Title of the message: </label>
+          <input type="text" name="title" id="title" required />
+
+          <!-- Message -->
+          <label for="message-content"> Enter your message </label>
+          <textarea
+            name="messageContent"
+            id="message-content"
+            rows="5"
+            cols="15"
+          ></textarea>
+
+          <button type="submit">create</button>
+        </form>
+      </div>
+    </div>
+
     <a href="/log-out">Log out</a>
-</body>
+  </body>
+
+  <script src="createMessagejs.js"></script>
 </html>

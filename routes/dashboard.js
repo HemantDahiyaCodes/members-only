@@ -4,7 +4,7 @@ const passport = require("passport");
 const db = require("../db/dbquery");
 
 dashboardRoute.get("/", (req, res) => {
-    res.render("dashboard");
+    res.render("dashboard", {user: req.user});
 })
 
 dashboardRoute.use("/", async (req, res) => {

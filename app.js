@@ -8,6 +8,7 @@ const loginRoute = require("./routes/login");
 const pool = require("./db/DbPool");
 const passport = require("passport");
 const dashboard = require("./routes/dashboard");
+const messageRoute = require("./routes/createMessage");
 
 // Creating express instance
 const app = express();
@@ -40,6 +41,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/", indexRoute);
 app.use("/log-in", loginRoute);
 app.use("/dashboard", dashboard);
+app.use("/createMessage", messageRoute);
+
 app.get("/log-out", (req, res, next) => {
   req.logout((err) => {
     if (err) {

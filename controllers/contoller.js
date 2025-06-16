@@ -2,11 +2,12 @@ const db = require("../db/dbquery");
 const bcrypt = require("bcryptjs");
 
 function SignUpForm(req, res) {
+  console.log("Loading the form!");
   res.render("index");
 }
 
 async function AddUser(req, res) {
-  const {username, password} = req.body;
+  const { username, password } = req.body;
 
   const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -18,6 +19,8 @@ async function AddUser(req, res) {
   if (user === false) {
     throw new Error("User Already exists");
   }
+
+  res.redirect("/");
 
   return user;
 }
