@@ -14,7 +14,6 @@ function ensureAuthenticated(req, res, next) {
 
 dashboardRoute.get("/", ensureAuthenticated, async (req, res) => {
   const { rows } = await db.getAllMessages();
-  console.log(rows);
   res.render("dashboard", { user: req.user, allMessages : rows });
 });
 

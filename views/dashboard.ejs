@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
-    <link rel="stylesheet" href="createMessagejs.css">
+    <link rel="stylesheet" href="createMessagejs.css" />
   </head>
   <body>
     <H1>Hello <%= user.username %></H1>
-    be a member by clicking the button:
+    be a member and an admin by clicking the button:
     <form action="/dashboard" method="post">
       <button type="submit">become a member</button>
     </form>
@@ -38,6 +38,23 @@
         </form>
       </div>
     </div>
+
+    <% console.log(`User Information: ${user}`) %> <% console.log(`Current user
+    is: ${user.username}, is the user a member?: ${user.ismember}`) %> <%
+    console.log(`All messages: ${allMessages}`); %>
+
+    <!-- If the user is logged in show this -->
+    <% if(user.ismember) { %> <% allMessages.map((message) => { %>
+    <p><%= message.title %></p>
+    <p><%= message.content %></p>
+    <p>Message was sent on <%= message.timestamp %></p>
+    <p>Message was created by <%=message.author %></p>
+    <% }) %> <% } else { %> <% allMessages.map((message) => { %>
+    <p><%= message.title %></p>
+    <p><%= message.content %></p>
+    <p>Message was sent on <%= message.timestamp %></p>
+    <p>Message was created by <b>unkown person</b></p>
+    <% }) %> <% } %>
 
     <a href="/log-out">Log out</a>
   </body>
